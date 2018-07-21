@@ -1,0 +1,76 @@
+$--table-header-color: #1f2d3d;
+$--table-header-background: #eef1f6;
+$--border-color-lighter: #dfe6ec;
+$--table-row-hover-background: #eef1f6;
+$--input-disabled-color: #b3b2b2;
+$--color-text-regular: #1f2d3d;
+$--color-text-placeholder: #97a8be;
+$--font-path: "~element-ui/lib/theme-chalk/fonts";
+@import "~element-ui/packages/theme-chalk/src/index";
+body {
+  padding: 0;
+  margin: 0;
+  background: #fefefe;
+}
+
+:-webkit-full-screen {
+  width: 100%;
+  height: 100%;
+  background: #fefefe;
+}
+
+#app {
+  overflow: hidden;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+
+.page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 101;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 1px 1px 1px #eee;
+}
+
+.page-aside {
+  position: fixed;
+  left: 0;
+  top: 50px;
+  height: 100%;
+  width: 65px;
+  &.opened {
+    width: 200px;
+  }
+  transition: width 0.3s linear;
+  background: #fafafa;
+  z-index: 100;
+  border-right: 1px solid #ddd;
+  box-shadow: 1px 1px 1px #eee;
+  overflow-y: auto;
+  overflow-x: hidden;
+  [role="menubar"] {
+    border-right: none;
+    padding-bottom: 100px;
+  }
+}
+
+.page-main {
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - 50px);
+  padding-left: 220px;
+  padding-top: 60px;
+  box-sizing: border-box;
+  transition: padding-left 0.3s linear;
+}
+
+.page-aside.collapsed ~ .page-main {
+  padding-left: 85px;
+}
